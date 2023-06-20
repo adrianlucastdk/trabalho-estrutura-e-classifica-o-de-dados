@@ -2,10 +2,8 @@
  * TRABALHO ESTRUTURA E CLASSIFICAÇÃO DE DAODS
  * ADRIAN LUCAS TODERKE - 00230994
  */
-package com.mycompany.main;
-import java.util.Arrays;
-import javax.swing.JOptionPane;
 
+package com.mycompany.main;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
@@ -55,18 +53,47 @@ public class Main {
         );
     }
 
-    private static int[] porInsercao(int[] array) {
-        Arrays.sort(array);
-        return array;
+    public static int[] porInsercao(int[] vetor) {
+        for (int i = 1; i < vetor.length; i++) {
+            int chave = vetor[i];
+            int j = i - 1;
+            while (j >= 0 && vetor[j] > chave) {
+                vetor[j + 1] = vetor[j];
+                j = j - 1;
+            }
+            vetor[j + 1] = chave;
+        }
+        return vetor;
     }
 
-    private static int[] porSelecao(int[] array) {
-        Arrays.sort(array);
-        return array;
+    public static int[] porSelecao(int[] vetor) {
+        for (int i = 0; i < vetor.length - 1; i++) {
+            int indiceMinimo = i;
+            for (int j = i + 1; j < vetor.length; j++) {
+                if (vetor[j] < vetor[indiceMinimo]) {
+                    indiceMinimo = j;
+                }
+            }
+            int temp = vetor[indiceMinimo];
+            vetor[indiceMinimo] = vetor[i];
+            vetor[i] = temp;
+        }
+        return vetor;
     }
 
-    private static int[] porBolha(int[] array) {
-        Arrays.sort(array);
-        return array;
+    public static int[] porBolha(int[] vetor) {
+        boolean troca;
+        do {
+            troca = false;
+            for (int i = 0; i < vetor.length - 1; i++) {
+                if (vetor[i] > vetor[i + 1]) {
+                    int temp = vetor[i];
+                    vetor[i] = vetor[i + 1];
+                    vetor[i + 1] = temp;
+                    troca = true;
+                }
+            }
+        } while (troca);
+        return vetor;
     }
 }
