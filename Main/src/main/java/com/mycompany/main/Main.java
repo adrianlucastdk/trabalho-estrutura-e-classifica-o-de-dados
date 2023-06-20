@@ -28,19 +28,29 @@ public class Main {
 
         int[] vetorOrdenado;
         String metodoOrdenacao = "";
+        long tempoInicio, tempoFim, tempoExecucao;
 
         switch (opcao) {
             case 1:
+                tempoInicio = System.nanoTime();
                 vetorOrdenado = porInsercao(vetor.clone());
                 metodoOrdenacao = "Inserção";
+                tempoFim = System.nanoTime();
+                tempoExecucao = tempoFim - tempoInicio;
                 break;
             case 2:
+                tempoInicio = System.nanoTime();
                 vetorOrdenado = porSelecao(vetor.clone());
                 metodoOrdenacao = "Seleção";
+                tempoFim = System.nanoTime();
+                tempoExecucao = tempoFim - tempoInicio;
                 break;
             case 3:
+                tempoInicio = System.nanoTime();
                 vetorOrdenado = porBolha(vetor.clone());
                 metodoOrdenacao = "Bolha";
+                tempoFim = System.nanoTime();
+                tempoExecucao = tempoFim - tempoInicio;
                 break;
             default:
                 JOptionPane.showMessageDialog(null, "Opção inválida");
@@ -49,7 +59,8 @@ public class Main {
 
         JOptionPane.showMessageDialog(null,
                 "Método de ordenação: " + metodoOrdenacao + "\n" +
-                        "Vetor ordenado:\n" + Arrays.toString(vetorOrdenado)
+                        "Vetor ordenado:\n" + Arrays.toString(vetorOrdenado) + "\n" +
+                        "Tempo de execução: " + tempoExecucao + " nanossegundos"
         );
     }
 
