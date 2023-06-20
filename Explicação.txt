@@ -1,0 +1,26 @@
+Primeiro pede pro usuário o tamanho do vetor, 
+em seguida, solicita os elementos do vetor um por um.
+Depois disso, exibe o vetor original.
+
+Em seguida, o usuário pode escolher entre três métodos de ordenação: inserção, seleção e bolha.  
+o código chama o método de ordenação correspondente a escolha do usuário
+e armazena o vetor ordenado em uma variável.
+
+Sobre os métodos:
+
+Método de Inserção: 
+Percorre o vetor da esquerda para a direita, 
+inserindo cada elemento em sua posição correta no subvetor ordenado à esquerda.
+A cada iteração, o algoritmo compara o elemento atual,
+com os elementos anteriores e os desloca para a direita até encontrar a posição correta para inserção.
+
+Método de Seleção: 
+Percorre o vetor procurando o elemento mínimo em cada iteração.
+ A cada passo, o algoritmo encontra o elemento mínimo restante e o troca com o elemento na posição atual. 
+Isso resulta na construção do subvetor ordenado à esquerda do vetor.
+
+Método da Bolha: 
+Percorre o vetor várias vezes, comparando pares adjacentes de elementos e trocando-os se estiverem na ordem errada. 
+Em cada iteração, o maior elemento "flutua" para o final do vetor. Esse processo é repetido até que o vetor esteja completamente ordenado.
+
+Depois de ordenar o vetor usando o método escolhido, o código exibe o método de ordenação utilizado, vetor ordenado na caixa de diálogo e o tempo de execução.
